@@ -13,7 +13,7 @@ func main() {
 
 	pass, _ := password.HashPassword("123456")
 	user := &model.User{
-		Name:     "name",
+		Name:     "John Doe",
 		Email:    "mail@mail.com",
 		Password: pass,
 	}

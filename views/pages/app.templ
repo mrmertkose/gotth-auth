@@ -1,11 +1,12 @@
 package pages
 
 import "github.com/mrmertkose/gotth-auth/views/layouts"
+import "github.com/mrmertkose/gotth-auth/views"
 
 templ App() {
 	@layout.Base("App Guard") {
 		@layout.Dashboard() {
-			App Guard
+			Welcome <span class="text-red-700 font-bold">{ views.GetName(ctx) }</span>
 		}
 	}
 }

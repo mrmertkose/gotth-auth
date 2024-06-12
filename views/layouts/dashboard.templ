@@ -3,7 +3,7 @@ package layout
 import "github.com/mrmertkose/gotth-auth/views"
 
 templ Dashboard() {
-	<div class="bg-gray-100 font-sans leading-normal tracking-normal">
+	<div class="bg-gray-100 font-sans">
 		<header class="bg-white shadow-md">
 			<div class="container mx-auto px-6 py-4 flex justify-between items-center">
 				<a href="/" class="text-2xl font-bold text-blue-600">Logo</a>
@@ -11,8 +11,6 @@ templ Dashboard() {
 					if views.IsAuth(ctx) {
 						<a href="/" class="text-gray-800 hover:text-blue-600">Home</a>
 						<a href="/app/home" class="text-gray-800 hover:text-blue-600">App</a>
-					}
-					if views.IsAuth(ctx) {
 						<a hx-post="/app/logout" class="text-gray-800 cursor-pointer hover:text-blue-600">Logout</a>
 					} else {
 						<a href="/auth/login" class="text-gray-800 hover:text-blue-600">Login</a>
@@ -20,11 +18,15 @@ templ Dashboard() {
 				</nav>
 			</div>
 		</header>
-		{ children... }
-		<footer class="bg-gray-800 text-white py-6">
-			<div class="container mx-auto px-6 text-center">
-				<p>&copy; 2024</p>
+		<div class="min-h-screen flex flex-col justify-start">
+			<div class="lg:w-8/12 w-12/12 my-10 mx-auto p-6 bg-white">
+				{ children... }
 			</div>
-		</footer>
+			<footer class="bg-gray-800 text-white py-6 mt-auto">
+				<div class="container mx-auto px-6 text-center">
+					<p>&copy; 2024</p>
+				</div>
+			</footer>
+		</div>
 	</div>
 }
