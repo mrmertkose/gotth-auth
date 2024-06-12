@@ -1,0 +1,28 @@
+package forms
+
+type InputOptions struct {
+	Label     string
+	InputType string
+	Name      string
+	Value     string
+	Err       string
+	Attr      templ.Attributes
+}
+
+templ Input(options InputOptions) {
+	<input
+		placeholder={ options.Label }
+		type={ options.InputType }
+		name={ options.Name }
+		id={ options.Name }
+		value={ options.Value }
+		{ options.Attr... }
+		autocomplete="off"
+		class={ "px-3 py-2 bg-white text-slate-600 text-sm font-normal border border-gray-300 rounded-md disabled:text-neutral-400 placeholder:text-slate-400 disabled:cursor-not-allowed focus:ring-1 focus:border-blue-500 w-full max-w-screen-xl", templ.KV("!bg-stone-50 focus:!ring-0 !border-red-400 focus:!border-red-500", len(options.Err) > 0) }
+	/>
+	if len(options.Err) > 0 {
+		<div class="label mt-1">
+			<span class="text-rose-500 text-xs font-medium">{ options.Err }</span>
+		</div>
+	}
+}

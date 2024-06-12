@@ -1,0 +1,16 @@
+package alerts
+
+templ ErrorAlert(globalError string) {
+	if len(globalError) > 0 {
+		<div class="bg-red-100 text-red-700 px-4 py-3 rounded-xl w-full" role="alert">
+			<div class="flex items-center">
+				<div class="py-1 me-2">
+					<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-5 w-5" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+				</div>
+				<div>
+					<p class="text-sm">{ globalError }</p>
+				</div>
+			</div>
+		</div>
+	}
+}
