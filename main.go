@@ -1,7 +1,6 @@
 package main
 
 import (
-	"embed"
 	"github.com/labstack/echo/v4"
 	"github.com/mrmertkose/gotth-auth/middleware"
 	"github.com/mrmertkose/gotth-auth/pkg/database"
@@ -9,9 +8,6 @@ import (
 	"github.com/mrmertkose/gotth-auth/pkg/sessions"
 	"github.com/mrmertkose/gotth-auth/router"
 )
-
-//go:embed all:assets
-var StaticFS embed.FS
 
 func main() {
 	app := echo.New()
