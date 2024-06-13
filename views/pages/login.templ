@@ -17,6 +17,7 @@ templ LoginForm(params request.LoginRequest, errors map[string]string) {
 				Name:      "email",
 				Value:     params.Email,
 				Err:       errors["email"],
+				Attr:      templ.Attributes{"autocomplete": "off", "required": true},
 			})
 		</div>
 		<div class="mb-4">
@@ -26,6 +27,7 @@ templ LoginForm(params request.LoginRequest, errors map[string]string) {
 				Name:      "password",
 				Value:     params.Password,
 				Err:       errors["password"],
+				Attr:      templ.Attributes{"autocomplete": "off"},
 			})
 		</div>
 		<div class="flex justify-center mb-5">
