@@ -1,3 +1,5 @@
+<b>Medium Link:</b> https://medium.com/@mertkose/go-ve-templ-ile-basit-authentication-uygulaması-gotth-stack-cbac444df510
+
 # Gotth Stack Basic Authentication
 - Golang + Templ + Tailwindcss + Htmx
 
